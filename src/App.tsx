@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useLayoutEffect, useState, useRef } from 'react'
 import './App.css'
 import { ShoppingCartIcon } from '@fluentui/react-icons-mdl2'
 import InstagramIcon from './assets/InstagramIcon'
 import TwitterIcon from './assets/TwitterIcon'
 import gsap from 'gsap'
+import Galery from './components/galery/Galery'
 
 function App() {
   //https://alameda-fluid-demo.squarespace.com/
@@ -21,7 +21,7 @@ function App() {
     return () => ctx.revert()
   }, [])
 
-  const animateOnNavBarClick = (timeline: any) => {
+  const animateOnNavBarClick = (timeline: gsap.core.Timeline) => {
     timeline?.to(hamburgerLineOne.current, {
       rotate: "+45",
       width: "25",
@@ -86,9 +86,7 @@ function App() {
         </div>
       </header>
 
-      <main>
-        
-      </main>
+      <Galery/>
     </>
   )
 }
