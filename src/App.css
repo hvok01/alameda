@@ -125,3 +125,30 @@ header .cart-container .socials svg {
   position: relative;
   top: 8px;
 }
+
+@media screen and (min-width: 900px) {
+  header nav .hamburger-container {
+    display: none;
+  }
+
+  header nav .navlinks {
+    display: flex;
+  }
+
+  header nav .navlinks ul {
+    flex-direction: row;
+  }
+
+  header nav .navlinks ul li {
+    padding: 0 5px;
+  }
+
+  header nav .navlinks ul li a {
+    font-size: 1rem;
+  }
+
+  header .cart-container .socials {
+    display: flex;
+    margin-right: 10px;
+  }
+}

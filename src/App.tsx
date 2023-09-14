@@ -60,10 +60,7 @@ function App() {
             <div className="hamburger-item-1" ref={hamburgerLineOne}></div>
             <div className="hamburger-item-2" ref={hamburgerLineTwo}></div>
           </div>
-          {
-            //active
-          }
-          <div className="navlinks " id="navid">
+          <div className="navlinks" id="navid">
             <ul className="navlinks-container">
               <li><a href="#" className="navlink-item">Shop</a></li>
               <li><a href="#" className="navlink-item">Lookbook</a></li>
@@ -78,7 +75,7 @@ function App() {
           </a>
         </div>
         <div className="cart-container">
-          <div className="socials " id='socials'>
+          <div className="socials" id='socials'>
             <InstagramIcon />
             <TwitterIcon />
           </div>
