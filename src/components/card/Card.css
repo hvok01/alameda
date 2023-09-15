@@ -1,5 +1,6 @@
 .card-container {
     margin: 0;
+    position: relative;
 }
 
 .card-container img {
@@ -20,6 +21,31 @@
 .card-container p {
     font-family: 'Noto Sans Linear B', sans-serif; 
     font-size: 1rem;
+}
+
+.card-container .offer {
+    font-family: 'Noto Sans Linear B', sans-serif; 
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: end;
+    font-weight: 800;
+    color: #a1a09b;
+}
+
+.card-container .card-hoverbutton {
+    font-family: 'Noto Sans Linear B', sans-serif; 
+    font-size: .9rem;
+    text-transform: uppercase;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    cursor: pointer;
+    padding: 20px;
+    background-color: #000;
+    color: #FFF;
+    border: none;
 }
 
 @media screen and (min-width: 900px) {

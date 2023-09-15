@@ -1,9 +1,16 @@
 import Card from "../card/Card"
 import "./Galery.css"
-import alamedaImageOne from "../../assets/alameda-1.jpg"
-import alamedaImageOneHover from "../../assets/alameda-1-2.jpg"
+import { MockData } from "../../api/MockData"
+import { useEffect, useState } from "react"
+import IProduct from "../../interfaces/IProduct"
 
 export default function Galery() {
+    const [data, setData] = useState<IProduct[]>([]);
+
+    useEffect(() => {
+        const results: IProduct[] = MockData()
+        setData(results);
+    }, [])
     
     return (
         <main className="galery-container">
@@ -15,13 +22,18 @@ export default function Galery() {
                 </ul>
             </div>
             <div className="galery-cards-container">
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
-                <Card imgsrc={alamedaImageOne} hoverimagesrc={alamedaImageOneHover} title="Lounge Tunic / Black" price="$50.00" offer={false}/>
+                {
+                    data && data.map((item: IProduct) => {
+                        return  <Card 
+                                    id={item.id}
+                                    imgsrc={item.imgsrc} 
+                                    hoverimagesrc={item.hoverimagesrc} 
+                                    title={item.title} 
+                                    price={<p>{item.price} {item.offer ? <s>{item.offer}</s> : ""}</p>} 
+                                    offer={item.offer && item.offer.length > 0 ? true : false}
+                                />
+                    })
+                }
             </div>
         </main>
     )
