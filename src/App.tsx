@@ -87,6 +87,23 @@ function App() {
       </header>
 
       <Galery/>
+
+      <footer>
+        <div className="footer-socials">
+          <InstagramIcon />
+          <TwitterIcon />
+        </div>
+        <div className="footer-newsletter-legend">
+          Sign up to receive news and updates.
+        </div>
+        <div className="footer-newsletter-container">
+          <input type="email" name="email" id="email-newsletter" placeholder="Email Address"/>
+          <button>Sign Up</button>
+        </div>
+        <div className="footer-made-by">
+          Made with 🖤 by <u>hvok01</u>
+        </div>
+      </footer>
     </>
   )
 }

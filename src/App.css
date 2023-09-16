@@ -108,6 +108,7 @@ header .cart-container .socials-active {
 }
 
 header .cart-container .socials svg {
+  cursor: pointer;
   margin: 0 5px;
 }
 
@@ -128,6 +129,54 @@ header .cart-container .socials svg {
 .hamburger-container .hamburger-item-2 {
   position: relative;
   top: 8px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .footer-socials {
+  margin-bottom: 6vh;
+}
+
+footer .footer-socials svg {
+  margin: 0px 5px;
+  cursor: pointer;
+}
+
+footer .footer-newsletter-legend {
+  font-family: 'Noto Sans Linear B', sans-serif;
+  margin-bottom: 5vh;
+}
+
+footer .footer-newsletter-container input {
+  padding: 20px;
+  border: 1px solid #b3b3b3;
+  color: #000;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+footer .footer-newsletter-container input::placeholder {
+  color: #9c9c9c;
+}
+
+footer .footer-newsletter-container button {
+  padding: 18px;
+  font-size: 1rem;
+  background-color: #9c9c9c;
+  border: none;
+  color: #FFF;
+  font-family: 'Noto Sans Linear B', sans-serif;
+}
+
+footer .footer-made-by {
+  font-family: 'Noto Sans Linear B', sans-serif;
+  margin: 10vh 0;
 }
 
 @media screen and (min-width: 900px) {

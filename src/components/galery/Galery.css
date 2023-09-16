@@ -42,6 +42,21 @@
     margin: 40px;
 }
 
+.galery-container .galery-lookbook-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20vh 0;
+}
+
+.galery-container .galery-lookbook-container a {
+    color: #000;
+    font-family: 'Noto Sans Linear B', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
 @media screen and (min-width: 900px) {
 
     .galery-container .galery-cards-container {

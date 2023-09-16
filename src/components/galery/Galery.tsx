@@ -35,6 +35,9 @@ export default function Galery() {
                     })
                 }
             </div>
+            <div className="galery-lookbook-container">
+                <a href="#">SS - 22 Lookbook</a>
+            </div>
         </main>
     )
 }
