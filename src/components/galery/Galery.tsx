@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Card from "../card/Card"
 import "./Galery.css"
 import { MockData } from "../../api/MockData"
@@ -8,27 +9,33 @@ import gsap from 'gsap'
 export default function Galery() {
     const [data, setData] = useState<IProduct[]>([]);
     const galeryCards = useRef(null);
+    const [timeline, setTimeline] = useState<gsap.core.Timeline>()
 
     useEffect(() => {
-        const results: IProduct[] = MockData();
-        setData(results);
+        const results: IProduct[] = MockData()
+        setData(results)
     }, [])
+
+    useEffect(() => {
+        if(data.length > 0) {
+            animateCardsOnLoad()
+        }
+    }, [data])
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             const tl = gsap.timeline()
-            animateCardsOnLoad(tl)
+            setTimeline(tl)
         });
-      return () => ctx.revert()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        return () => ctx.revert()
     }, [])
 
-    const animateCardsOnLoad = (tl: gsap.core.Timeline) => {
+    const animateCardsOnLoad = () => {
         if(data && data.length > 0) {
             const current: any = galeryCards.current;
             const arrayOfCards : gsap.TweenTarget[]= current ? gsap.utils.toArray(current.children) : [];
             arrayOfCards.forEach((card) => {
-                tl?.to(card, {
+                timeline?.to(card, {
                     opacity: 1,
                     duration: 0.3,
                     y: "+=4"
@@ -49,7 +56,7 @@ export default function Galery() {
             <div className="galery-cards-container" ref={galeryCards}>
                 {
                     data && data.map((item: IProduct, key) => {
-                        return  <div key={key} style={{ opacity: 0 }}>
+                        return  <div key={key} style={data.length > 0 ? { opacity: 0 } : { opacity: 1 }}>
                                     <Card 
                                         id={item.id}
                                         imgsrc={item.imgsrc} 

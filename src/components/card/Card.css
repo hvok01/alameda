@@ -46,6 +46,7 @@
     background-color: #000;
     color: #FFF;
     border: none;
+    opacity: 0;
 }
 
 @media screen and (min-width: 900px) {
